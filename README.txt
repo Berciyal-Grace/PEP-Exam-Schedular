@@ -9,7 +9,7 @@ This version includes:
 - Live countdown
 - Calm / Focus / Final Stretch mood system
 - Motivational quote API with fallback quotes
-- 7-day study timeline
+- Study timeline
 - Interactive completion checkboxes and progress percentage
 - Change Exam button
 - No refresh buttons
