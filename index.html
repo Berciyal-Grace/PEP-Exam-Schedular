@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Companion — Your exam. Your plan.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#" id="brandReset">
+        <img src="exam_logo.jpg" alt="Exam Companion logo" class="brand-logo">
+        <span><b>Exam Companion</b><small>COLLEGE STUDY PLANNER</small></span>
+      </a>
+      <nav id="dashboardNav" class="nav hidden">
+        <a href="#overview">Overview</a>
+        <a href="#plan">Study Plan</a>
+        <a href="#motivation">Motivation</a>
+      </nav>
+      <div class="top-actions">
+        <span class="status-pill"><span class="dot"></span> Focus mode</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- LOGIN -->
+      <section id="loginScreen" class="login-page">
+        <div class="login-grid">
+          <div class="login-visual">
+            <div class="visual-badge">✦ STUDY COMPANION</div>
+            <h1>Make exam week<br><em>feel manageable.</em></h1>
+            <p>One calm place for your countdown, study rhythm, motivation, and final revision.</p>
+            <div class="visual-illustration">
+              <div class="circle-glow"></div>
+              <img src="exam_logo.jpg" alt="Books and stationery illustration">
+            </div>
+          </div>
+
+          <div class="login-card">
+            <div class="card-kicker">WELCOME BACK</div>
+            <h2>Open your study desk</h2>
+            <p class="muted">Sign in to continue to your Exam Companion.</p>
+
+            <form id="loginForm">
+              <label for="studentName">Student name</label>
+              <div class="field">
+                <span>◉</span>
+                <input id="studentName" type="text" placeholder="Enter your name" autocomplete="name" required>
+              </div>
+
+              <label for="studentEmail">College email</label>
+              <div class="field">
+                <span>✉</span>
+                <input id="studentEmail" type="email" placeholder="you@college.edu" autocomplete="email" required>
+              </div>
+
+              <label for="studentPassword">Password</label>
+              <div class="field">
+                <span>⌑</span>
+                <input id="studentPassword" type="password" placeholder="Enter password" autocomplete="current-password" required>
+              </div>
+
+              <div class="login-options">
+                <label class="check-option"><input type="checkbox" id="rememberMe"> <span>Remember me</span></label>
+                <span>Demo login · no backend yet</span>
+              </div>
+
+              <button class="primary-btn" type="submit">Enter Study Desk <span>→</span></button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETUP -->
+      <section id="setupScreen" class="setup-page hidden">
+        <div class="setup-grid">
+          <div class="intro-panel">
+            <div class="kicker">EXAM WEEK / STUDY COMPANION</div>
+            <h1>Your exam.<br><em>Your plan.</em><br>One day at a time.</h1>
+            <p class="lead">Turn the anxious days before an exam into a clear, manageable rhythm — with a live countdown, a focused study plan, and a little motivation when you need it.</p>
+            <div class="quote-preview">
+              <span class="quote-mark">“</span>
+              <p>Small progress every day adds up to big results.</p>
+              <small>— Your future self</small>
+            </div>
+          </div>
+
+          <div class="setup-card">
+            <div class="card-kicker">SET UP YOUR EXAM</div>
+            <h2>Set Your Exam Target</h2>
+            <p class="muted">We'll build your countdown and 7-day revision rhythm.</p>
+
+            <form id="examForm">
+              <label for="examName">Exam name</label>
+              <div class="field">
+                <span>✦</span>
+                <input id="examName" type="text" placeholder="Database Management Systems" required>
+              </div>
+
+              <div class="field-row">
+                <div>
+                  <label for="examDate">Exam date</label>
+                  <div class="field">
+                    <span>▣</span>
+                    <input id="examDate" type="date" required>
+                  </div>
+                </div>
+                <div>
+                  <label for="examTime">Exam time</label>
+                  <div class="field">
+                    <span>◷</span>
+                    <input id="examTime" type="time" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mini-note">
+                <span>◎</span>
+                <div><b>Adaptive study rhythm</b><small>Your timetable expands or compresses to match the time you actually have.</small></div>
+              </div>
+
+              <button class="primary-btn" type="submit">Open Study Desk <span>→</span></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="feature-strip">
+          <div><span>01</span><b>Structured Milestones</b><small>Know what to work on without overthinking it.</small></div>
+          <div><span>02</span><b>Cognitive Spacing</b><small>Move from learning to revision at the right time.</small></div>
+          <div><span>03</span><b>Revision Loop</b><small>Return to the topics that need another look.</small></div>
+        </div>
+      </section>
+
+      <!-- DASHBOARD -->
+      <section id="dashboardScreen" class="dashboard hidden">
+        <section id="overview" class="hero-section">
+          <div class="hero-copy">
+            <div class="kicker">NEXT EXAM / <span id="heroDate">—</span></div>
+            <h1 id="displayExamName">Database Management Systems</h1>
+            <p class="hero-meta"><span id="heroDateTime">—</span> · <span>Local time</span></p>
+          </div>
+          <div class="hero-actions">
+            <button class="ghost-btn" id="changeExam">Change exam</button>
+          </div>
+        </section>
+
+        <section class="countdown-wrap">
+          <div class="countdown-head">
+            <div>
+              <span id="moodBadge" class="mood-badge calm">🌱 CALM MODE</span>
+              <p id="moodMessage">You have time. Build your plan deliberately.</p>
+            </div>
+            <span class="tiny-label">LIVE COUNTDOWN</span>
+          </div>
+
+          <div class="countdown-grid">
+            <div class="time-unit"><strong id="days">00</strong><span>DAYS</span></div>
+            <div class="time-unit"><strong id="hours">00</strong><span>HOURS</span></div>
+            <div class="time-unit"><strong id="minutes">00</strong><span>MINUTES</span></div>
+            <div class="time-unit"><strong id="seconds">00</strong><span>SECONDS</span></div>
+          </div>
+
+          <div class="mood-scale">
+            <span class="active calm-dot">Calm · 8+ days</span>
+            <span class="active focus-dot">Focus · 3–7 days</span>
+            <span class="active urgent-dot">Final stretch · 0–2 days</span>
+          </div>
+        </section>
+
+        <section id="motivation" class="quote-panel">
+          <div>
+            <span class="section-label">A LITTLE SCHOLARLY MOTIVATION</span>
+            <p id="quoteText">“Loading a little motivation…”</p>
+            <small id="quoteAuthor">— Exam Companion</small>
+          </div>
+        </section>
+
+        <section id="plan" class="plan-section">
+          <div class="section-top">
+            <div>
+              <span class="section-label">DELIBERATE PRACTICE / STUDY DESK</span>
+              <h2 id="planTitle">Your Study Plan</h2>
+              <p id="planSubtitle">Your plan adapts to the exact time you have before the exam.</p>
+            </div>
+            <div class="progress-summary">
+              <b id="progressText">0%</b>
+              <span>STUDY PROGRESS</span>
+              <small id="progressSub">0 of 8 milestones complete</small>
+            </div>
+          </div>
+
+          <div class="progress-track"><div id="progressFill"></div></div>
+          <div class="plan-columns">
+            <span>DAY / PLAN</span><span>TODAY'S ACTIVE MILESTONE</span><span>EDIT / STATUS</span>
+          </div>
+          <div id="studyPlan" class="timeline"></div>
+        </section>
+
+        <div id="completionModal" class="completion-modal hidden" role="dialog" aria-modal="true" aria-labelledby="completionTitle">
+          <div class="completion-backdrop" data-close-modal></div>
+          <div class="completion-card">
+            <div class="completion-sparkle">✦</div>
+            <div class="completion-icon">✓</div>
+            <span class="section-label">STUDY MILESTONES COMPLETE</span>
+            <h2 id="completionTitle">You're good to go! 🎉</h2>
+            <p id="completionMessage">You completed every milestone in your study plan. Take a breath, trust your preparation, and walk into the exam with confidence.</p>
+            <button id="closeCompletion" class="primary-btn completion-btn" type="button">Back to my study plan <span>↓</span></button>
+          </div>
+        </div>
+
+        <section class="bottom-features">
+          <div><span class="feature-icon">◷</span><b>Active Recall Clock</b><small>Use short focused sessions instead of endless study.</small></div>
+          <div><span class="feature-icon">▤</span><b>Reserve Desk Materials</b><small>Keep your notes and practice questions close.</small></div>
+          <div><span class="feature-icon">⌁</span><b>Mentor Milestones</b><small>Mark the topics you want to ask about later.</small></div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <span>EXAM COMPANION / BUILT FOR FOCUSED STUDY</span>
+      <span>Warm study mode · No account required</span>
+      <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+        <span aria-hidden="true">↑</span>
+        Back to top
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
